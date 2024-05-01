@@ -45,12 +45,13 @@ public class ServerNode {
         server.addClient(client2);
 
         // Simulate message exchange
+        scanner.nextLine(); // Consume newline character left by previous nextInt() calls
         System.out.print("Enter message from Client 1 to Client 2: ");
-        String message1To2 = scanner.next();
+        String message1To2 = scanner.nextLine();
         client1.send(server, client2, message1To2);
 
         System.out.print("Enter message from Client 2 to Client 1: ");
-        String message2To1 = scanner.next();
+        String message2To1 = scanner.nextLine();
         client2.send(server, client1, message2To1);
 
         // Close scanner
